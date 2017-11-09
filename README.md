@@ -1,6 +1,6 @@
 # oracle-cloud-iaas-workshop
 
-## This will deploy a two virtual machines with a load balancer on Oracle Cloud Infrastructure using Terraform
+## This will deploy two virtual machines configured with MEAN STACK and Load Balanced on Oracle Cloud Infrastructure using Terraform
 
 # Software Requirements
 
