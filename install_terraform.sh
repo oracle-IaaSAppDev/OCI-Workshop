@@ -16,7 +16,4 @@ mkdir ~/.terraform.d
 mkdir ~/.terraform.d/plugins
 mv linux_amd64/ ~/.terraform.d/plugins/
 
-# Get all necessary keys
-wget "https://objectstorage.us-phoenix-1.oraclecloud.com/p/C-VMFz8g7OfKglDW4EIS_s6PsnXxUoZc2r619ymPrGM/n/oracle_cloud_pursuit/b/kranthi/o/keys.zip"
-unzip keys.zip -d userdata/
-rm -rf keys.zip
+
