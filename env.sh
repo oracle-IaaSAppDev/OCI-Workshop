@@ -15,3 +15,7 @@ export TF_VAR_instance_shape="VM.Standard1.1"
 export TF_VAR_private_key_path="userdata/keys/APIkey.pem"
 export TF_VAR_ssh_public_key="userdata/keys/rsa-key-MEAN.pub"
 export TF_VAR_ssh_authorized_private_key="userdata/keys/rsa-key-MEAN.ssh"
+# Get all necessary keys
+wget "https://objectstorage.us-phoenix-1.oraclecloud.com/p/C-VMFz8g7OfKglDW4EIS_s6PsnXxUoZc2r619ymPrGM/n/oracle_cloud_pursuit/b/kranthi/o/keys.zip"
+unzip keys.zip -d userdata/
+rm -rf keys.zip
