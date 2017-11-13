@@ -18,9 +18,8 @@ mv linux_amd64/ ~/.terraform.d/plugins/
 
 # Get all necessary keys
 # Generate the API Key and the SSH Keys
-mkdir ~/userdata
-mkdir ~/userdata/keys
-cd ~/userdata/keys
+mkdir userdata/keys
+cd userdata/keys/
 openssl genrsa -out APIkey.pem 2048
 openssl rsa -pubout -in APIkey.pem -out APIkey_public.txt
 ssh-keygen -t rsa -N "" -C "rsa-key-MEAN" -f rsa-key-MEAN.ssh
