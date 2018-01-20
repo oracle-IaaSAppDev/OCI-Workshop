@@ -1,6 +1,6 @@
 #Get Terraform
-version=terraform_0.10.6_linux_amd64.zip
-wget "https://releases.hashicorp.com/terraform/0.10.6/$version"
+version=terraform_0.11.2_linux_amd64.zip
+wget "https://releases.hashicorp.com/terraform/0.11.2/$version"
 unzip $version -d ~/
 rm $version
 cd /usr/bin
