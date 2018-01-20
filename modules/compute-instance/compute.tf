@@ -1,7 +1,7 @@
 resource "oci_core_instance" "compute_instance" {
-  availability_domain = "${lookup(data.oci_identity_availability_domains.ADs.availability_domains[count.index + 1],"name")}"
+  availability_domain = "${lookup(data.oci_identity_availability_domains.ADs.availability_domains[count.index],"name")}"
   compartment_id      = "${var.compartment_ocid}"
-  display_name        = "TF_Instance-${count.index + 1}"
+  display_name        = "TF_Instance-${count.index}"
   image               = "${var.image_ocid}"
   shape               = "${var.instance_shape}"
   subnet_id           = "${element(split(",", var.subnets), count.index)}"
