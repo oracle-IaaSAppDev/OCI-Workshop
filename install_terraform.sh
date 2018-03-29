@@ -1,6 +1,6 @@
 #Get Terraform
-version=terraform_0.11.2_linux_amd64.zip
-wget "https://releases.hashicorp.com/terraform/0.11.2/$version"
+version=terraform_0.11.5_linux_amd64.zip
+wget "https://releases.hashicorp.com/terraform/0.11.5/$version"
 unzip $version -d ~/
 rm $version
 cd /usr/bin
@@ -8,10 +8,10 @@ sudo ln -s $HOME/terraform terraform
 cd ~/OCI-Workshop
 
 #Get OCI Plugin for Terraform
-wget "https://github.com/oracle/terraform-provider-oci/releases/download/v2.0.1/linux.tar.gz"
-tar -xvzf linux.tar.gz
+wget "https://github.com/oracle/terraform-provider-oci/releases/download/v2.1.2/linux_amd64.tar.gz"
+tar -xvzf linux_amd64.tar.gz
 #Add OCI to Terraform Plugins
-rm -rf linux_386/ linux_arm/ linux.tar.gz
+rm linux_amd64.tar.gz
 mkdir ~/.terraform.d
 mkdir ~/.terraform.d/plugins
 mv linux_amd64/ ~/.terraform.d/plugins/
