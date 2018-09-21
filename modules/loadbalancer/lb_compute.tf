@@ -14,7 +14,7 @@ resource "oci_load_balancer_backendset" "lb-bes1" {
   health_checker {
     port                = "8080"
     protocol            = "HTTP"
-    response_body_regex = ".*"
+    response_body_regex = "*"
     url_path            = "/"
   }
 }
