@@ -39,15 +39,15 @@ Commands:
 ```
 [opc@orchestration demo]$   ./install_terraform.sh
 
-[opc@orchestration demo]$	. ./env.sh
+[opc@orchestration demo]$   . ./env.sh
 
 [opc@orchestration demo]$   terraform init
 
-[opc@orchestration demo]$	terraform plan
+[opc@orchestration demo]$   terraform plan
 
-[opc@orchestration demo]$	terraform apply
+[opc@orchestration demo]$   terraform apply
 
-[opc@orchestration demo]$	terraform destroy
+[opc@orchestration demo]$   terraform destroy
 ```
 
 # oracle-cloud-iaas-workshop
