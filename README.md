@@ -37,7 +37,7 @@ If you want to tear down your environment, you can do that by running terraform 
 
 Commands:
 ```
-[opc@orchestration demo]$   ./install_terraform.sh
+[opc@orchestration demo]$   bash install_terraform.sh
 
 [opc@orchestration demo]$   . ./env.sh
 

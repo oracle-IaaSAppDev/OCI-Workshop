@@ -22,14 +22,14 @@ resource "oci_load_balancer_backendset" "lb-bes1" {
 resource "oci_load_balancer_listener" "lb-listener1" {
   load_balancer_id         = "${oci_load_balancer.lb.id}"
   name                     = "http"
-  default_backend_set_name = "${oci_load_balancer_backendset.lb-bes1.id}"
+  default_backend_set_name = "${oci_load_balancer_backendset.lb-bes1.name}"
   port                     = "8080"
   protocol                 = "HTTP"
 }
 
 resource "oci_load_balancer_backend" "lb-be" {
   load_balancer_id = "${oci_load_balancer.lb.id}"
-  backendset_name  = "${oci_load_balancer_backendset.lb-bes1.id}"
+  backendset_name  = "${oci_load_balancer_backendset.lb-bes1.name}"
   ip_address       = "${element(split(",", var.lb_backend_all_ip), count.index)}"
   count            = "${var.lb_backend_ip_count}"
   port             = "8080"
