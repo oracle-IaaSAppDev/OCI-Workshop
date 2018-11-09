@@ -1,26 +1,21 @@
 #Get Terraform
-version=terraform_0.11.7_linux_amd64.zip
-wget "https://releases.hashicorp.com/terraform/0.11.7/$version"
-unzip $version -d ~/
-rm $version
-cd /usr/bin
-sudo ln -s $HOME/terraform terraform
-cd ~/OCI-Workshop
+# update the terraform binary to 0.11.8
+version=terraform_0.11.8_linux_amd64.zip
+wget "https://releases.hashicorp.com/terraform/0.11.8/$version"
 
-#Get OCI Plugin for Terraform
-wget "https://github.com/oracle/terraform-provider-oci/releases/download/v2.1.8/linux_amd64.tar.gz"
-tar -xvzf linux_amd64.tar.gz
-#Add OCI to Terraform Plugins
-rm linux_amd64.tar.gz
-mkdir ~/.terraform.d
-mkdir ~/.terraform.d/plugins
-mv linux_amd64/ ~/.terraform.d/plugins/
+# installing the terraform binary into /usr/local/bin so it can referenced by bas
+sudo unzip $version -d /usr/local/bin
+rm $version
+
+# With the recent terraform oci provider you no longer
+# need to manually install the provider
+# when you do 
+# $ terraform init
+# terraform will automatically install the terraform oci provider
 
 # Get all necessary keys
 # Generate the API Key and the SSH Keys
 mkdir userdata/keys
-cd userdata/keys/
-openssl genrsa -out APIkey.pem 2048
-openssl rsa -pubout -in APIkey.pem -out APIkey_public.txt
-ssh-keygen -t rsa -N "" -C "rsa-key-MEAN" -f rsa-key-MEAN.ssh
-cd ~/OCI-Workshop
+openssl genrsa -out userdata/keys/APIkey.pem 2048
+openssl rsa -pubout -in userdata/keys/APIkey.pem -out userdata/keys/APIkey_public.txt
+ssh-keygen -t rsa -N "" -C "rsa-key-MEAN" -f userdata/keys/rsa-key-MEAN.ssh
